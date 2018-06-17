@@ -1,0 +1,17 @@
+{
+  "name": "friendgamematch",
+  "version": "1.0.0",
+  "description": "This is a personal project to see what games a group of friends can play together",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^4.19.1",
+    "https": "^1.0.0",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
+  }
+}
