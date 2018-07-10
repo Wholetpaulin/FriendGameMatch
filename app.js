@@ -12,13 +12,16 @@
 
 // 4. Translate and print out the game names for all the game in finalarr
 
+// 5. Work this into a web server and host it on heroku or digital ocean
+
+// 6. Create a front end and make an AJAX post to newly made API
+
 // http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=A8B02BBDEA37016E013FE1F1E72D08B5&steamid=76561198084532463&format=json
 
 var rp = require('request-promise');
-
 let similarList = [];
 
-function buildSimilarList(...theArgs){  
+function buildSimilarList(theArgs){  
     return new Promise((resolve, reject) => {
         for(let i = 0; i < theArgs.length; i++){ // for each arg passed in run GetOwnedGames
             getOwnedGames(theArgs[i], 1) // Add each array of owned games into similarList
@@ -98,7 +101,7 @@ function compare(arrs) { // This function was totally not borrowed from SO
  */
 
 // You can get steamid from the number in the url of people's profile page
-buildSimilarList('76561198084532463', '76561198084269582', '76561198075802266') // me, Don Con, Campbell
+buildSimilarList(['76561198084532463', '76561198371268099', '76561198075802266', '76561197961765490']) // me, Don Con, Campbell
     .then((messyArr) => {
         return digOut(messyArr); // clean up the messy response from steam... DIG OUT what we want!
     })
